@@ -2,9 +2,20 @@
 The MATLAB implementation of the DQL method and Smart DQL method. The DQL method is a hybrid derivative free optimization method. It has mathematically proven local convergence. The methods are part of my thesis work as follows:
 Huang, Z. (2022). A hybrid direct search and model-based derivative-free optimization method with dynamic decision processing.
 
+DQL method:
 [Point_List, x_best_index, stop, time, step, n, k] = DQL(f, x_0, step, eps_max, eps_min, eps_grad, max_calls, direct_switch, quad_switch, linear_switch, dispOption)
+
+Smart DQL method:
 [Point_List, x_best_index, stop, time, step, n, k] = sDQL(f, x_0, step, eps_max, eps_min, eps_grad, max_calls, dispOption)
 
+Output:
+   - Evaluated Point_List
+   - The indexes of best solutions.
+   - Stop Indicator: 
+      -  1: optimum solution found
+      -  0: optimum solution not found
+      -  -1: optimum solution not found because the search step does not meet condition.
+      -  -2: optimum solution not found because the search step and gradient does not meet condition.
 
 Input:
    - Objective Function: f
@@ -33,14 +44,8 @@ Input:
        quadratic fitting algorithm at 1 and 1/2 step.
        - 3: Search on descent direction from last x_best
        - 4: Smart Linear Step
-    -dispOption:
-      -0: disable display
-      -1: display the estimated remaining time.
-Out put:
-   - Evaluated Point_List
-   - The indexes of best solutions.
-   - Stop Indicator: - 1: optimum solution found
-                     - 0: optimum solution not found
-                     - -1: optimum solution not found because the search step does not meet condition.
-                     - -2: optimum solution not found because the search step and gradient does not meet condition.
+   - dispOption:
+      - 0: disable display
+      - 1: display the estimated remaining time.
+
 
