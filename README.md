@@ -36,7 +36,7 @@ Input:
     -dispOption:
       -0: disable display
       -1: display the estimated remaining time.
-\{Output}:
+Out put:
    - Evaluated Point_List
    - The indexes of best solutions.
    - Stop Indicator: - 1: optimum solution found
